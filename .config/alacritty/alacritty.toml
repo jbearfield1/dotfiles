@@ -1,0 +1,19 @@
+[window]
+dynamic_title = true
+dimensions = {columns = 80,	lines = 24}
+padding = {x = 18, y = 18}
+opacity = 0.6
+#blur = true
+blur = false
+#decorations = "None"
+
+[font]
+size = 12
+normal = {family = "monospace", style = "Regular"}
+bold = {family = "Monospace", style = "Bold"}
+italic = {family = "Monospace", style = "Regular Italic"}
+bold_italic = {family = "Monospace", style = "Bold Italic"}
+
+[cursor]
+style  =  {shape = "Block", blinking = "On"}
+blink_timeout = 0
