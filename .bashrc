@@ -87,20 +87,10 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -123,16 +113,16 @@ PS1="\w > "
 export PATH="${PATH}:${HOME}/.local/bin/:${HOME}/.local/share/zig"
 
 # sets up terminal color scheme using pywal
-(cat ~/.cache/wal/sequences &)
+#(cat ~/.cache/wal/sequences &)
 
 # sets color based on current background
-x=`gsettings get org.cinnamon.desktop.background picture-uri | wc -c`
-y=$((x-2))
-wall_length=`gsettings get org.cinnamon.desktop.background picture-uri | cut -c 9-$y`
-#wallpaper_path=`grep "^Image=" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | cut -c 7-`
-#wal -q -i $wallpaper_path -n
-#wal --cols16 "lighten"  -q -i  $wall_length -n 
-wal -a 80 -q -i  $wall_length -n 
+#x=`gsettings get org.cinnamon.desktop.background picture-uri | wc -c`
+#y=$((x-2))
+#wall_length=`gsettings get org.cinnamon.desktop.background picture-uri | cut -c 9-$y`
+##wallpaper_path=`grep "^Image=" ~/.config/plasma-org.kde.plasma.desktop-appletsrc | cut -c 7-`
+##wal -q -i $wallpaper_path -n
+##wal --cols16 "lighten"  -q -i  $wall_length -n 
+#wal -a 80 -q -i  $wall_length -n 
 export TERM="xterm-256color"
 
 #eval "$(zoxide init bash --cmd cd)"
@@ -144,4 +134,4 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "$(fnm env --shell bash)"
 fi
-alias config='/usr/bin/git --git-dir=/home/josh/.cfg/ --work-tree=/home/josh'
+

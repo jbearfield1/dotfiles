@@ -14,11 +14,18 @@ syntax on
 " sets encoding for YCM
 set encoding=utf-8
 
+" sets working directory to that of opened file
+set autochdir
+set tags=tags;
+
 " loads plugins
 call plug#begin()
 
 Plug 'catppuccin/vim', { 'as': 'catppuccin' } " catppuccin color scheme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " coc autocomplete
+Plug 'dylanaraps/wal.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -28,6 +35,12 @@ inoremap <silent><expr> <TAB>
  	\ CheckBackspace() ? "\<Tab>" : 
  	\ coc#Refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" keybinds for use with ctags
+" open definition in new tab
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" open defintion in vertical split
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " show relative line nums + current line num
 set number
